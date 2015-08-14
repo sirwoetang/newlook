@@ -29,10 +29,15 @@
 <link href="styles/font-awesome.css"    rel="stylesheet" type="text/css">
 <link href="styles/animate.css"         rel="stylesheet" type="text/css">
 
+<script src="phonegap.js"></script>
+
 <script type="text/javascript" src="scripts/jquery.js"></script>
 <script type="text/javascript" src="scripts/jqueryui.js"></script>
 <script type="text/javascript" src="scripts/framework-plugins.js"></script>
 <script type="text/javascript" src="scripts/custom.js"></script>
+<script type="text/javascript" src="scripts/login_init.js"></script>
+
+
 </head>
 
 <body >
@@ -94,7 +99,7 @@
                                 with great ease, just add your<br>
                                 text, and we'll handle the rest!
                             </p>
-                            <a href="#" class="facebook-login facebook-color"><i class="fa fa-facebook"></i>Login with Facebook</a>
+                            <a id="facebook_login" href="#" class="facebook-login facebook-color"><i class="fa fa-facebook"></i>Login with Facebook</a>
                         </div>
                         <div class="overlay bg-black"></div>
                     </div>
@@ -134,7 +139,55 @@
         I'll go away on my own after a few seconds!
     </p>
 </div>
-    
+
+
+<script>
+    var app = {
+        // Application Constructor
+        initialize: function() {
+            this.bindEvents();
+        },
+        // Bind Event Listeners
+        //
+        // Bind any events that are required on startup. Common events are:
+        // 'load', 'deviceready', 'offline', and 'online'.
+        bindEvents: function() {
+            document.addEventListener('deviceready', this.onDeviceReady, false);
+        },
+        // deviceready Event Handler
+        //
+        // The scope of 'this' is the event. In order to call the 'receivedEvent'
+        // function, we must explicity call 'app.receivedEvent(...);'
+        onDeviceReady: function() {
+            app.receivedEvent('deviceready');
+
+
+
+
+
+
+        },
+        // Update DOM on a Received Event
+        receivedEvent: function(id) {
+
+        }
+    };
+    app.initialize();
+
+    $("#facebook_login").click(function() {
+        var mytoken = window.localStorage.getItem('fbtoken');
+        gap_init();
+
+        if (mytoken) {
+            silent_fb_login(mytoken)
+        } else {
+            facebook_init();
+        }
+    });
+</script>
+
+
+
 </body>
 
 
