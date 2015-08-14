@@ -77,7 +77,7 @@ function upload_token(provider, token){
         success: function (data) {
             //alert(data)
             if('name' in data){
-                //alert("has name")
+                alert("has name")
                 window.sessionStorage['loggedIn'] = 'true';
                 load_main_page()
             } else {
