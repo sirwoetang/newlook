@@ -15,7 +15,7 @@ function load_main_page() {
             }
         });
     } else {
-        window.location = 'home'
+        window.location = 'home.html'
     }
 
     //remove loader spinner
