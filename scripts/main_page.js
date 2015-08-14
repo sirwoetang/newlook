@@ -10,7 +10,7 @@ function load_main_page() {
         url: 'wall_stub.html',
         success: function (file_html) {
             // success
-            $('.content').html(file_html)
+            $('.all-elements').html(file_html)
 
         }
     });
