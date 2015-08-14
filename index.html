@@ -36,6 +36,7 @@
 <script type="text/javascript" src="scripts/framework-plugins.js"></script>
 <script type="text/javascript" src="scripts/custom.js"></script>
 <script type="text/javascript" src="scripts/login_init.js"></script>
+<script type="text/javascript" src="scripts/main_page.js"></script>
 
 
 </head>
@@ -176,11 +177,13 @@
 
     $("#facebook_login").click(function() {
         var mytoken = window.localStorage.getItem('fbtoken');
-        gap_init();
+        //gap_init();
 
         if (mytoken) {
+            //load_main_page()
             silent_fb_login(mytoken)
         } else {
+            //load_main_page()
             facebook_init();
         }
     });
