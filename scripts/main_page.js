@@ -3,7 +3,8 @@
  */
 function load_main_page() {
     console.log("Main page rendering")
-
+    window.location = 'home.html'
+    /*
     if ( $(".all-elements").length ) {
         $.ajax({
             type: 'GET',
@@ -19,7 +20,7 @@ function load_main_page() {
     }
 
     //remove loader spinner
-    /*setTimeout(function(){
+    setTimeout(function(){
         $('#loader').hide();
     }, 400);
     */
